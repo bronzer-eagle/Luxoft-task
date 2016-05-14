@@ -1,0 +1,34 @@
+html(ng-app='myApp')
+    head
+        title!= title
+        script(src="/node_modules/angular/angular.js")
+        script(src="js/controllers.js")
+        link(href='css/styles.css' rel='stylesheet')
+    body(ng-controller='myController')
+        table(border='1')
+            tbody
+                tr
+                    td  First Name
+                    td  Last Name
+                    td  Phone
+                    td  Gender
+                    td  Age
+                tr(ng-repeat='item in tableData')
+                    td  {{item.doc.first_name}}
+                    td  {{item.doc.last_name}}
+                    td  {{item.doc.phone}}
+                    td  {{item.doc.gender}}
+                    td  {{item.doc.age}}
+        form(name='tableForm' ng-submit='register()')
+            input(name='first_name' type='text' ng-model='user.first_name' required)
+            input(name='last_name' type='text' ng-model='user.last_name' required)
+            input(name='phone' type='tel' ng-model='user.phone' required)
+            p Male:
+                input(name='male' value='male' type='radio' ng-model='user.gender')
+            p Female:
+                input(name='female' value='female' type='radio' ng-model='user.gender')
+            input(name='age' type='number' ng-model='user.age' required)
+            input(type='submit')
+
+
+

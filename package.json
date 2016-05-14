@@ -1,0 +1,19 @@
+{
+  "name": "luxoft",
+  "version": "1.0.0",
+  "description": "A test task",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "async": "^1.5.2",
+    "body-parser": "^1.15.1",
+    "jade": "^1.11.0",
+    "nano": "^6.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander",
+  "license": "ISC"
+}

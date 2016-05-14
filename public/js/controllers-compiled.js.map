@@ -1,0 +1,1 @@
+{"version":3,"sources":["controllers.js"],"names":[],"mappings":"AAAA,IAAI,QAAQ,QAAQ,MAAR,CAAe,OAAf,EAAwB,EAAxB,CAAR;;AAEJ,MAAM,UAAN,CAAiB,cAAjB,EAAiC,UAAU,MAAV,EAAkB,EAAlB,CAAjC","file":"controllers-compiled.js","sourcesContent":["var myApp = angular.module('myApp', []);\r\n\r\nmyApp.controller('myController', function ($scope) {\r\n    \r\n});"]}
