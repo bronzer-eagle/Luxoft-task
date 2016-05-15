@@ -1,3 +1,119 @@
 body {
-  background: #d5f5f5;
+  background: #ffffff;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body table {
+  display: inline-block;
+  border-color: #ffffff;
+  color: white;
+  border-spacing: 0;
+}
+body table tr {
+  cursor: pointer;
+  transition: background 1s ease;
+}
+body table tr:first-child {
+  background: #3536a7;
+}
+body table tr:not(:first-child):hover {
+  background: #654ba7;
+}
+body table td {
+  padding: 10px;
+  font-size: 21px;
+  border-bottom: 2px solid white;
+}
+.left-side {
+  position: fixed;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 600px;
+  height: 100%;
+  background: #7984ee;
+  overflow-y: scroll;
+}
+.left-side::-webkit-scrollbar {
+  width: 0;
+}
+form {
+  width: auto;
+  position: fixed;
+  left: 600px;
+  top: 50%;
+  margin: -158px 0 0 60px;
+  text-align: center;
+}
+form > div {
+  vertical-align: top;
+  text-align: left;
+  display: inline-block;
+}
+form > div:first-of-type {
+  margin-right: 60px;
+}
+form > div > input {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid #aeaeae;
+  outline: none;
+  border-right: 10px solid transparent;
+  transition: border-right 1s ease;
+}
+form > div > input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+form > div > input:nth-of-type(4) {
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+form > div > input:nth-of-type(5) {
+  margin-bottom: 15px;
+}
+form > div > input:last-of-type {
+  width: 278px;
+}
+form > div > input[type=radio] {
+  background: none;
+}
+form > div > label {
+  font-size: 22px;
+  border-left: 2px solid #7984ee;
+  padding-left: 10px;
+  display: block;
+  margin-bottom: 15px;
+}
+form > input {
+  height: 50px;
+  width: 200px;
+  border: 1px solid #7984ee;
+  background: none;
+  border-radius: 5px;
+  outline: none;
+  transition: background 1s ease;
+  font-size: 22px;
+  color: #7984ee;
+  margin-top: 20px;
+}
+form > input:active {
+  background: #f4f4f4;
+  padding-top: 5px;
+}
+form input.ng-invalid.ng-touched {
+  border-right: 10px solid #FA787E;
+}
+form input.ng-valid.ng-touched {
+  border-right: 10px solid #78FA89;
+}
+.help-block {
+  height: 20px;
+  font-size: 12px;
+  color: red;
+}
+form > .help-block {
+  margin-top: -20px;
 }

@@ -5,30 +5,42 @@ html(ng-app='myApp')
         script(src="js/controllers.js")
         link(href='css/styles.css' rel='stylesheet')
     body(ng-controller='myController')
-        table(border='1')
-            tbody
-                tr
-                    td  First Name
-                    td  Last Name
-                    td  Phone
-                    td  Gender
-                    td  Age
-                tr(ng-repeat='item in tableData')
-                    td  {{item.doc.first_name}}
-                    td  {{item.doc.last_name}}
-                    td  {{item.doc.phone}}
-                    td  {{item.doc.gender}}
-                    td  {{item.doc.age}}
-        form(name='tableForm' ng-submit='register()')
-            input(name='first_name' type='text' ng-model='user.first_name' required)
-            input(name='last_name' type='text' ng-model='user.last_name' required)
-            input(name='phone' type='tel' ng-model='user.phone' required)
-            p Male:
-                input(name='male' value='male' type='radio' ng-model='user.gender')
-            p Female:
-                input(name='female' value='female' type='radio' ng-model='user.gender')
-            input(name='age' type='number' ng-model='user.age' required)
-            input(type='submit')
+        div.left-side
+            table
+                tbody
+                    tr
+                        td  First Name
+                        td  Last Name
+                        td  Phone
+                        td  Gender
+                        td  Age
+                    tr(ng-repeat='item in tableData')
+                        td  {{item.doc.first_name}}
+                        td  {{item.doc.last_name}}
+                        td  {{item.doc.phone}}
+                        td  {{item.doc.gender}}
+                        td  {{item.doc.age}}
+        form(name='tableForm' ng-submit='register(tableForm.$valid)')
+            p(ng-show="!valid" class="help-block" ) Oops, something wrong!
+            div.labels
+                label(for='firstName') First name:
+                label(for='lastName') Last name:
+                label(for='phone') Phone number:
+                p(ng-show="tableForm.phone.$invalid && !tableForm.phone.$pristine" class="help-block")
+                label(for='male') Male:
+                label(for='female') Female:
+                label(for='age') Age:
+            div.inputs
+                input#firstName(name='first_name' type='text' ng-model='user.first_name' required)
+                input#lastName(name='last_name' type='text' ng-model='user.last_name' required)
+                input#phone(name='phone' type='tel' ng-model='user.phone' required ng-minlength="3" numbers ng-model-options="{ updateOn: 'blur' }")
+                p(ng-show="tableForm.phone.$invalid && !tableForm.phone.$pristine" class="help-block") The phone number is too short or consists of letters!
+                input#male(name='male' value='male' type='radio' ng-model='user.gender' ng-required="!user.gender")
+                input#female(name='female' value='female' type='radio' ng-model='user.gender' ng-required="!user.gender")
+                input#age(name='age' type='number' ng-model='user.age' required min='10' max='90' ng-model-options="{ updateOn: 'blur' }")
+                p(ng-show="tableForm.age.$invalid && !tableForm.age.$pristine" class="help-block" ) The age must be 10 - 90 years!
+            br
+            input(type='submit' value='Send')
 
 
 
