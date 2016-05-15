@@ -46,6 +46,9 @@ form {
   margin: -158px 0 0 60px;
   text-align: center;
 }
+form i.fa {
+  display: none;
+}
 form > div {
   vertical-align: top;
   text-align: left;
@@ -64,6 +67,9 @@ form > div > input {
   border-right: 10px solid transparent;
   transition: border-right 1s ease;
 }
+form > div > input::-webkit-input-placeholder {
+  opacity: 0;
+}
 form > div > input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset;
 }
@@ -76,9 +82,6 @@ form > div > input:nth-of-type(5) {
 }
 form > div > input:last-of-type {
   width: 278px;
-}
-form > div > input[type=radio] {
-  background: none;
 }
 form > div > label {
   font-size: 22px;

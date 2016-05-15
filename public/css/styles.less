@@ -1,26 +1,26 @@
-@mainBg : #ffffff;
+@mainBg: #ffffff;
 
-body{
+body {
   background: @mainBg;
   font-family: sans-serif;
   padding: 0;
   margin: 0;
-  & table{
+  & table {
     display: inline-block;
     border-color: #ffffff;
     color: white;
     border-spacing: 0;
-    & tr{
+    & tr {
       cursor: pointer;
       transition: background 1s ease;
-      &:first-child{
+      &:first-child {
         background: #3536a7;
       }
-      &:not(:first-child):hover{
+      &:not(:first-child):hover {
         background: #654ba7;
       }
     }
-    & td{
+    & td {
       padding: 10px;
       font-size: 21px;
       border-bottom: 2px solid white;
@@ -28,7 +28,7 @@ body{
   }
 }
 
-.left-side{
+.left-side {
   position: fixed;
   display: inline-block;
   vertical-align: top;
@@ -37,27 +37,34 @@ body{
   height: 100%;
   background: #7984ee;
   overflow-y: scroll;
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 0;
   }
 }
 
-form{
+form {
   width: auto;
   position: fixed;
   left: 600px;
   top: 50%;
   margin: -158px 0 0 60px;
   text-align: center;
-  &>div{
+  & i.fa {
+    display: none;
+  }
+  & > div {
     vertical-align: top;
     text-align: left;
     display: inline-block;
-    &:first-of-type{
+    &:first-of-type {
       margin-right: 60px;
     }
   }
-  &>div>input{
+  & > div > input {
+    &::-webkit-input-placeholder {
+      //color: #ffffff;
+      opacity: 0;
+    }
     display: block;
     margin-bottom: 10px;
     font-size: 22px;
@@ -66,31 +73,28 @@ form{
     outline: none;
     border-right: 10px solid transparent;
     transition: border-right 1s ease;
-    &:-webkit-autofill{
+    &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 1000px white inset;
     }
-    &:nth-of-type(4){
+    &:nth-of-type(4) {
       margin-top: 25px;
       margin-bottom: 30px;
     }
-    &:nth-of-type(5){
+    &:nth-of-type(5) {
       margin-bottom: 15px;
     }
-    &:last-of-type{
+    &:last-of-type {
       width: 278px;
     }
-    &[type=radio]{
-      background: none;
-    }
   }
-  &>div>label{
+  & > div > label {
     font-size: 22px;
     border-left: 2px solid #7984ee;
     padding-left: 10px;
     display: block;
     margin-bottom: 15px;
   }
-  &>input{
+  & > input {
     height: 50px;
     width: 200px;
     border: 1px solid #7984ee;
@@ -101,7 +105,7 @@ form{
     font-size: 22px;
     color: #7984ee;
     margin-top: 20px;
-    &:active{
+    &:active {
       background: #f4f4f4;
       padding-top: 5px;
     }
@@ -116,13 +120,13 @@ form input.ng-valid.ng-touched {
   border-right: 10px solid #78FA89;
 }
 
-.help-block{
+.help-block {
   height: 20px;
   font-size: 12px;
   color: red;
 }
 
-form>.help-block{
+form > .help-block {
   margin-top: -20px;
 }
 

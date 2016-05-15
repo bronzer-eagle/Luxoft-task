@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('myController', function ($scope, $http, $rootScope) {
+myApp.controller('myController', function ($scope, $http) {
     $scope.user = {};
     $scope.tableData = [];
     $scope.valid = true;
@@ -8,7 +8,7 @@ myApp.controller('myController', function ($scope, $http, $rootScope) {
     loadData();
 
     $scope.register = function (isValid) {
-        if (isValid){
+        if (isValid) {
             $scope.valid = true;
             $http.post('/addData', angular.toJson($scope.user)).success(function () {
                 loadData();
@@ -16,7 +16,7 @@ myApp.controller('myController', function ($scope, $http, $rootScope) {
                 $scope.tableForm.$setPristine();
                 $scope.tableForm.$setUntouched();
             });
-        }else {
+        } else {
             $scope.valid = false;
         }
 
@@ -32,11 +32,11 @@ myApp.controller('myController', function ($scope, $http, $rootScope) {
     }
 });
 
-myApp.directive('numbers', function() {
+myApp.directive('numbers', function () {
     return {
         require: 'ngModel',
-        link: function(scope, elm, attrs, ctrl) {
-            ctrl.$validators.numbers = function(modelValue, viewValue) {
+        link: function (scope, elm, attrs, ctrl) {
+            ctrl.$validators.numbers = function (modelValue, viewValue) {
                 if (ctrl.$isEmpty(modelValue)) {
                     // consider empty models to be valid
                     return true;

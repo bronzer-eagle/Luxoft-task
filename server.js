@@ -47,7 +47,7 @@ app.listen(port, function () {
 
 function checkTable() {
     myBase.db.list(function (err, body) {
-        if (!('table' in body)){
+        if (!('table' in body)) {
             myBase.db.create('table');
             base = myBase.db.use('table');
         }

@@ -1,9 +1,12 @@
 html(ng-app='myApp')
     head
         title!= title
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
         script(src="/node_modules/angular/angular.js")
         script(src="js/controllers.js")
+        script(src="https://use.fontawesome.com/5325d25c05.js")
         link(href='css/styles.css' rel='stylesheet')
+        link(href='css/media.css' rel='stylesheet')
     body(ng-controller='myController')
         div.left-side
             table
@@ -31,13 +34,15 @@ html(ng-app='myApp')
                 label(for='female') Female:
                 label(for='age') Age:
             div.inputs
-                input#firstName(name='first_name' type='text' ng-model='user.first_name' required)
-                input#lastName(name='last_name' type='text' ng-model='user.last_name' required)
-                input#phone(name='phone' type='tel' ng-model='user.phone' required ng-minlength="3" numbers ng-model-options="{ updateOn: 'blur' }")
+                input#firstName(name='first_name' type='text' ng-model='user.first_name' required placeholder='First name')
+                input#lastName(name='last_name' type='text' ng-model='user.last_name' required placeholder='Last name')
+                input#phone(name='phone' type='tel' ng-model='user.phone' required ng-minlength="3" numbers ng-model-options="{ updateOn: 'blur' }" placeholder='Phone number')
                 p(ng-show="tableForm.phone.$invalid && !tableForm.phone.$pristine" class="help-block") The phone number is too short or consists of letters!
+                i(class="fa fa-male" aria-hidden="true")
                 input#male(name='male' value='male' type='radio' ng-model='user.gender' ng-required="!user.gender")
+                i(class="fa fa-female" aria-hidden="true")
                 input#female(name='female' value='female' type='radio' ng-model='user.gender' ng-required="!user.gender")
-                input#age(name='age' type='number' ng-model='user.age' required min='10' max='90' ng-model-options="{ updateOn: 'blur' }")
+                input#age(name='age' type='number' ng-model='user.age' required min='10' max='90' ng-model-options="{ updateOn: 'blur' }" placeholder='Age')
                 p(ng-show="tableForm.age.$invalid && !tableForm.age.$pristine" class="help-block" ) The age must be 10 - 90 years!
             br
             input(type='submit' value='Send')

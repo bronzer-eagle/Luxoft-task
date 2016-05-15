@@ -1,0 +1,105 @@
+body table td {
+    padding: 10px;
+    font-size: 21px;
+}
+
+@media screen and (max-width: 850px) and (min-width: 680px) {
+    body table td {
+        padding: 5px;
+        font-size: 1em;
+    }
+}
+
+.left-side {
+    position: fixed;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 600px;
+    height: 100%;
+    background: #7984ee;
+    overflow-y: scroll;
+}
+
+.left-side::-webkit-scrollbar {
+    width: 0;
+}
+
+@media screen and (max-width: 850px) and (min-width: 680px) {
+    .left-side {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1190px) and (min-width: 680px) {
+    form {
+        margin: -200px 0 0 4%;
+    }
+
+    form > div > input::-webkit-input-placeholder {
+        opacity: 1;
+    }
+
+    form > div > input:nth-of-type(4) {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    form > div > input:nth-of-type(5) {
+        margin-bottom: 10px;
+    }
+
+    form > div:first-of-type {
+        width: 150px;
+        font-size: 16px;
+        display: none;
+    }
+
+    form i.fa {
+        display: block;
+        position: relative;
+        left: 40px;
+        top: 17px;
+    }
+
+    form i.fa:last-of-type {
+        top: 17px;
+    }
+}
+
+@media screen and (max-width: 850px) and (min-width: 680px) {
+    form {
+        margin: -200px 0 0 2%;
+        left: 60%;
+    }
+}
+
+@media screen and (max-width: 919px) and (min-width: 680px) {
+    form > div input {
+        width: 150px;
+        font-size: 16px;
+    }
+
+    form > div input:last-of-type {
+        width: 150px;
+        font-size: 16px;
+    }
+}
+
+form input.ng-invalid.ng-touched {
+    border-right: 10px solid #FA787E;
+}
+
+form input.ng-valid.ng-touched {
+    border-right: 10px solid #78FA89;
+}
+
+.help-block {
+    height: 20px;
+    font-size: 12px;
+    color: red;
+}
+
+form > .help-block {
+    margin-top: -20px;
+}
