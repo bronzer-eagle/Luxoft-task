@@ -13,6 +13,8 @@ myApp.controller('myController', function ($scope, $http, $rootScope) {
             $http.post('/addData', angular.toJson($scope.user)).success(function () {
                 loadData();
                 $scope.user = {};
+                $scope.tableForm.$setPristine();
+                $scope.tableForm.$setUntouched();
             });
         }else {
             $scope.valid = false;
